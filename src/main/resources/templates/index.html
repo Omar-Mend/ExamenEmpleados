@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Inicio</title>
+	</head>
+	<body>
+		<a th:href="@{/agregar}">agregar</a>
+		<br>
+			<table border= "1">
+				<tr> 
+					<th>Id</th>
+					<th>Genero</th>
+					<th>Puesto</th>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Fecha de nacimiento</th>
+				</tr>
+				
+				<tr th:each="empleado : ${empleados}"> 
+					<td th:text="${empleado.idEmployee}">Mostrar Id</td>
+					<td th:text="${empleado.genders}">Mostrar Genero</td>
+					<td th:text="${empleado.jobs}">Mostrar Puesto</td>
+					<td th:text="${empleado.name}">Mostrar Nombre</td>
+					<td th:text="${empleado.last_name}">Mostrar Apellido</td>
+					<td th:text="${empleado.birthdate}">Mostrar cumpleaño</td>
+				</tr>
+			</table>
+	</body>
+</html>
